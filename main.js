@@ -14,7 +14,7 @@ $(document).ready(function () {
 });
 
 function configure() {
-    const popupUrl = `https://gbi-tableau.airflow.apple.com/objectvisibility/config`
+    const popupUrl = `https://fsulaunchercomp.github.io/ObjectVisibility/config.html`
     let payload;
     tableau.extensions.ui.displayDialogAsync(popupUrl, payload, { height: 400, width: 350 }).then((closePayload) => {
         initExtension();
