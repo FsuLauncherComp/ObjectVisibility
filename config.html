@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    <script src="config.js"></script>
+    <script src="tableau.extensions.latest.js"></script>
+</head>
+
+<body>
+    <div class="container p-4 overflow-hidden">
+        <div class="row">
+            <div class="col-8">
+                <h4>Configuration</h4>
+            </div>
+            <div class="col-4">
+                <button type="button" class="btn btn-primary float-right" id="save-settings" onclick="submit()"
+                    disabled>Save</button>
+            </div>
+        </div>
+        <div class="pt-4">
+            <form>
+                <div class="form-group">
+                    <label for="pickzone">Target Dashboard Zone</label>
+                    <select class="form-control" id="pickzone" style="width:100%;">
+                        <option value='' disabled>Loading...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="trigger-type">Action Type</label>
+                    <select class="form-control" id="trigger-type">
+                        <option value="" selected disabled>Please select</option>
+                        <option value='trigger-parameter'>Parameter</option>
+                        <option value='trigger-dashboard-action'>Dashboard Action</option>
+                    </select>
+                </div>
+                <div id="trigger-parameter" class="trigger-config">
+                    <div class="form-group">
+                        <label for="pickparam">Parameter</label>
+                        <select class="form-control" id="pickparam" style="width:100%;">
+                            <option value='' disabled>Loading...</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="showhideoption">Show/Hide</label>
+                            <select class="form-control" id="showhideoption">
+                                <option value='show'>Show</option>
+                                <option value='hide'>Hide</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label for="paramvalue">Parameter Value</label>
+                            <input type="text" class="form-control" id="paramvalue">
+                        </div>
+                    </div>
+                </div>
+                <div id="trigger-dashboard-action" class="trigger-config">
+                    <div class="form-group">
+                        <label for="selectedWorksheet">Worksheet</label>
+                        <select class="form-control" id="selectedWorksheet" style="width:100%;">
+                            <option value='' disabled>Loading...</option>
+                        </select>
+                    </div>
+                    <div class='form-group'>
+                        <label for="showhideoption">Show/Hide</label>
+                        <select class="form-control" id="showhideoption">
+                            <option value='show'>Show</option>
+                            <option value='hide'>Hide</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
